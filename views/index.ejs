@@ -1,11 +1,60 @@
 <%- include('partials/header') -%>
 
-<main class="container">
-    <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Login</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
-    </div>
-</main>
-    
+    <main class="container">
+        <div class="row justify-content-around mt-5">
+            <a href="/login" class="col-3 btn btn-primary"> Login</a>
+            <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+        </div>
 
-<%- include('partials/footer') -%>
+        <div class="mt-5">
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+                <fieldset>
+                    <legend>Choose your ghoulish Drink</legend>
+
+                    <input type="text" id="name" name="name" placeholder="Enter Name for Order" required><br>
+
+                    <input type="radio" id="mothman" name="monster" value="Mothman Refresher">
+                    <label for="mothman">Mothman Refresher</label><br>
+                    <!-- <span>Lavender Lemonade Apple Berry Tea and a stab of cinnamon</span> -->
+
+                    <input type="radio" id="kraken" name="monster" value="Kraken Refresher">
+                    <label for="kraken">Kraken Refresher</label><br>
+                    <!-- <span></span> -->
+
+                    <input type="radio" id="cthulu" name="monster" value="Cthulu Refresher">
+                    <label for="cthulu">Cthulu Refresher</label><br>
+                    <!-- <span>matcha caramel and sea salt</span> -->
+
+                    <input type="radio" id="jack" name="monster" value="Jack-O'-Lantern Latte">
+                    <label for="jack">Jack-O'-Lantern Latte</label><br>
+                    <!-- <span>Pumpkin Spice Latte w/ chocolate syrup</span> -->
+
+                    <input type="radio" id="trick" name="monster" value="Trick or Treat Latte">
+                    <label for="trick">Trick or Treat Latte</label><br>
+                    <!-- <span>Pecan and maple syrup latte</span> -->
+
+                    <input type="radio" id="witch" name="monster" value="True Witch's Brew">
+                    <label for="witch">True Witch's Brew</label><br>
+                    <!-- <span>Eye ball boba with almond milk and black tea</span> -->
+
+                    <input type="radio" id="camp" name="monster" value="Campfire Fire">
+                    <label for="camp">Campfire Fire</label><br>
+                    <!-- <span>Hot Chocolate smores w/ a stab of cinnamon</span> -->
+
+                    <input type="radio" id="cider" name="monster" value="Caramel Apple Cider">
+                    <label for="cider">Caramel Apple Cider</label><br>
+                    <!-- <span>pink drink</span> -->
+
+                    <input type="radio" id="vanilla" name="monster" value="Vanilla Coffee">
+                    <label for="vanilla">Vanilla Coffee</label><br>
+                    <!-- <span>pink drink</span> -->
+                    <input type="text" id="custom" name="custom"
+                        placeholder="Add your annoying customizations here"><br>
+                </fieldset>
+                <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+        </div>
+    </main>
+
+
+    <%- include('partials/footer') -%>

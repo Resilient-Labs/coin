@@ -1,0 +1,54 @@
+<%- include('partials/header') -%>
+
+    <main class="container">
+        <div class="row justify-content-around mt-5">
+            <a href="/login" class="col-3 btn btn-primary"> Login</a>
+            <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+        </div>
+    </main>
+
+
+
+
+    <body>
+        <form>
+            <fieldset>
+                <legend>Choose your ghoulish Drink</legend>
+
+                <input type="radio" id="mothman" name="monster" value="1">
+                <label for="mothman">Mothman</label>
+                <!-- <span></span> -->
+
+                <input type="radio" id="kraken" name="monster" value="2">
+                <label for="kraken">Kraken</label><br>
+                <!-- <span></span> -->
+
+                <input type="radio" id="cthulu" name="monster" value="3">
+                <label for="cthulu">Cthulu</label><br>
+                <!-- <span>matcha caramel and sea salt</span> -->
+
+                <input type="radio" id="jack" name="monster" value="4">
+                <label for="jack">Jack-O'-Lantern Latte</label><br>
+                <!-- <span>Pumpkin Spice Latte w/ chocolate syrup</span> -->
+
+                <input type="radio" id="trick" name="monster" value="5">
+                <label for="trick">Trick or Treat Latte</label><br>
+                <!-- <span>Pecan and maple syrup latte</span> -->
+
+                <input type="radio" id="witch" name="monster" value="6">
+                <label for="witch">True Witch's Brew</label><br>
+                <!-- <span>Eye ball boba with almond milk and black tea</span> -->
+
+                <input type="radio" id="camp" name="monster" value="7">
+                <label for="camp">Campfire Fire</label><br>
+                <!-- <span></span> -->
+
+                <input type="radio" id="cthulu" name="monster" value="8">
+                <label for="cthulu">Cthulu</label><br>
+                <!-- <span></span> -->
+            </fieldset>
+
+            <button type="submit">Submit Order</button>
+        </form>
+        <%- include('partials/footer') -%>
+    </body>

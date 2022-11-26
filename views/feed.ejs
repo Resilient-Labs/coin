@@ -1,19 +1,74 @@
 <%- include('partials/header') -%>
+
+
+  <a href="/logout" class="col-3 btn btn-primary">logout</a>
+  <a href="/login" class="col-3 btn btn-primary">Login</a>
+  <a href="/signup" class="col-3 btn btn-primary">Sign Up</a>
+
   <div class="container">
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-            <div>
-              <ul>
-              </ul>
-            </div>
-          </li>
-          <% } %>
+        <h1>Hello Nigga</h1>
       </ul>
+    </div>
+    <div>
+      <section>
+        <h2>Pending Orders</h2>
+        <% for (let i=0; i<pending.length; i++) {%>
+          <h3 class="card-title">
+            <%= pending[i].name%>
+          </h3>
+          <ul>
+            <li>
+              <%= pending[i].pending%>
+            </li>
+            <li>
+              <%= pending[i].completed%>
+            </li>
+            <li>
+              <%= pending[i].custom%>
+            </li>
+          </ul>
+
+          <form action="/post/complete/<%= pending[i].id %>?_method=PUT" method="POST" class="col-3">
+
+            <button class="btn btn-light" type="submit">Complete</button>
+
+          </form>
+          <% } %>
+      </section>
+
+
+
+
+
+      <section>
+        <h2>Complete Orders</h2>
+        <% for (let i=0; i<done.length; i++) {%>
+          <div class="card-body bg-light">
+            <h3 class="card-title">
+              <%= done[i].name%>
+            </h3>
+            <ul>
+              <li>
+                <%= done[i].order%>
+              </li>
+              <li>
+                <%= done[i].custom%>
+              </li>
+              <li>
+                <%= done[i].barista%>
+              </li>
+            </ul>
+            <form
+          action="/post/deletePost/<%= done[i].id %>?_method=DELETE" method="POST"
+          class="col-3">
+              <button class="btn btn-light" type="submit">Delete</button>
+            </form>
+          </div>
+          <% } %>
+      </section>
+
     </div>
   </div>
   <%- include('partials/footer') -%>

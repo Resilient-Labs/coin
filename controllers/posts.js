@@ -1,22 +1,39 @@
-const cloudinary = require("../middleware/cloudinary");
+
 const Post = require("../models/Post");
 const Comment = require("../models/comment");
 
 module.exports = {
   getProfile: async (req, res) => {
     try {
-      const post = await Post.find({ user: req.user.id });
-      //we're inside the controller, here on line 7 the controller is using the model
-      //its saying only find the post with the id that is equal to the logged in user's id
-      res.render("profile.ejs", { post: post, user: req.user });
+      const pending = await Post.find({ completed: 'pending' })
+      //this is looking for all the orders marked as pending
+      const done = await Post.find({ completed: 'done' })
+      //this is looking for all the orders marked as done
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      const order = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("feed.ejs", {
+        posts: posts,
+        order: order,
+        pending: pending,
+        done: done
+      });
     } catch (err) {
       console.log(err);
     }
   },
   getFeed: async (req, res) => {
     try {
+      const pending = await Post.find({ completed: 'pending' })
+      const done = await Post.find({ completed: 'done' })
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { posts: posts });
+      const order = await Post.find().sort({ createdAt: "desc" }).lean();
+      console.log(pending)
+      res.render("feed.ejs", {
+        posts: posts,
+        order: order,
+        pending: pending,
+        done: done
+      });
     } catch (err) {
       console.log(err);
     }
@@ -24,24 +41,35 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
-      const comment = await Comment.find({postid: req.params.id});
-      res.render("post.ejs", { post: post, user: req.user, comment: comment});
+      const comment = await Comment.find({
+        postid: req.params.id
+      });
+      res.render("post.ejs", {
+        post: post,
+        user: req.user,
+        comment: comment
+      });
     } catch (err) {
       console.log(err);
     }
   },
   createPost: async (req, res) => {
     try {
-      // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
-
       await Post.create({
-        title: req.body.title,
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
-        caption: req.body.caption,
-        likes: 0,
-        user: req.user.id,
+        name: req.body.name,
+        order: req.body.monster,
+        custom: req.body.custom
+
+        // mothman: req.body.mothman,
+        // kraken: req.body.kraken,
+        // cuthulu: req.body.cuthulu,
+        // jack: req.body.jack,
+        // trick: req.body.trick,
+        // witch: req.body.witch,
+        // camp: req.body.camp,
+        // cider: req.body.cider,
+        // vanilla: req.body.vanilla,
+
       });
       console.log("Post has been added!");
       res.redirect("/profile");
@@ -49,26 +77,23 @@ module.exports = {
       console.log(err);
     }
   },
-  likePost: async (req, res) => {
+  complete: async (req, res) => {
     try {
       await Post.findOneAndUpdate(
         { _id: req.params.id },
         {
-          $inc: { likes: 1 },
+          completed: 'done',
+          barista: req.user.userName
         }
       );
-      console.log("Likes +1");
-      res.redirect(`/post/${req.params.id}`);
+      console.log('order marked as pending');
+      res.redirect(`/profile`);
     } catch (err) {
       console.log(err);
     }
   },
   deletePost: async (req, res) => {
     try {
-      // Find post by id
-      let post = await Post.findById({ _id: req.params.id });
-      // Delete image from cloudinary
-      await cloudinary.uploader.destroy(post.cloudinaryId);
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
