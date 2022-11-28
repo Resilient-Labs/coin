@@ -1,14 +1,14 @@
 <%- include('partials/header') -%>
-
+<body id="index">
     <main class="container">
         <div class="row justify-content-around mt-5">
-            <a href="/login" class="col-3 btn btn-primary"> Login</a>
-            <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+            <a href="/login" class="col-3 btn btn-outline-light"> Login</a>
+            <a href="/signup" class="col-3 btn btn-outline-light"> Signup</a>
         </div>
 
-        <div class="mt-5">
+        <div class="mt-5 indexformcontainer">
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-                <fieldset>
+                <fieldset class="orderform">
                     <legend>Choose your ghoulish Drink</legend>
 
                     <input type="text" id="name" name="name" placeholder="Enter Name for Order" required><br>
@@ -51,10 +51,10 @@
                     <input type="text" id="custom" name="custom"
                         placeholder="Add your annoying customizations here"><br>
                 </fieldset>
-                <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                <button type="submit" class="btn btn-outline-light" value="Upload">Submit</button>
             </form>
         </div>
     </main>
-
+</body>
 
     <%- include('partials/footer') -%>

@@ -1,74 +1,61 @@
 <%- include('partials/header') -%>
 
-
-  <a href="/logout" class="col-3 btn btn-primary">logout</a>
-  <a href="/login" class="col-3 btn btn-primary">Login</a>
-  <a href="/signup" class="col-3 btn btn-primary">Sign Up</a>
+<body id="feed">
+  <a href="/logout" class="col-3 btn btn-outline-light">logout</a>
 
   <div class="container">
     <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <h1>Hello Nigga</h1>
+      <ul class="row pst-unstyled">
       </ul>
-    </div>
-    <div>
-      <section>
-        <h2>Pending Orders</h2>
-        <% for (let i=0; i<pending.length; i++) {%>
-          <h3 class="card-title">
-            <%= pending[i].name%>
-          </h3>
-          <ul>
-            <li>
-              <%= pending[i].pending%>
-            </li>
-            <li>
-              <%= pending[i].completed%>
-            </li>
-            <li>
-              <%= pending[i].custom%>
-            </li>
-          </ul>
+      
+      <div class="left">
+        <h2  class="pendorder">Pending Orders</h2>
+        <section class="card">
+          <% for (let i=0; i<pending.length; i++) {%>
+            <h3 class="card-header">
+              <%= pending[i].name%>
+            </h3>
+            <div class="order-container">
+              <p>
+                <%= pending[i].pending%>
+              </p>
+              <p>
+                <%= pending[i].completed%>
+              </p>
+              <p>
+                <%= pending[i].custom%>
+              </p>
+            </div>
+            <form action="/post/complete/<%= pending[i].id %>?_method=PUT" method="POST" class="col-3">
+              <button class="btn btn-outline-dark" type="submit">Complete</button>
+            </form>
+            <% } %>
+        </section>
+      </div>
+      <div class="right d-flex flex-column border-end m-2 rounded text-center p-2">
+        <h2 class="comporder">Complete Orders</h2>
+        <section class="card">
 
-          <form action="/post/complete/<%= pending[i].id %>?_method=PUT" method="POST" class="col-3">
-
-            <button class="btn btn-light" type="submit">Complete</button>
-
-          </form>
-          <% } %>
-      </section>
-
-
-
-
-
-      <section>
-        <h2>Complete Orders</h2>
-        <% for (let i=0; i<done.length; i++) {%>
-          <div class="card-body bg-light">
-            <h3 class="card-title">
+          <% for (let i=0; i<done.length; i++) {%>
+            <h3 class="card-header">
               <%= done[i].name%>
             </h3>
-            <ul>
-              <li>
+            <div class="order-container">
+              <p>
                 <%= done[i].order%>
-              </li>
-              <li>
+              </p>
+              <p>
                 <%= done[i].custom%>
-              </li>
-              <li>
+              </p>
+              <p>
                 <%= done[i].barista%>
-              </li>
-            </ul>
-            <form
-          action="/post/deletePost/<%= done[i].id %>?_method=DELETE" method="POST"
-          class="col-3">
-              <button class="btn btn-light" type="submit">Delete</button>
+              </p>
+            </div>
+            <form action="/post/deletePost/<%= done[i].id %>?_method=DELETE" method="POST" class="col-3">
+              <button class="btn btn-outline-dark" type="submit">Delete</button>
             </form>
-          </div>
-          <% } %>
-      </section>
-
-    </div>
-  </div>
-  <%- include('partials/footer') -%>
+            <% } %>
+        </section>
+      </div>
+    </body>
+      <%- include('partials/footer') -%>
