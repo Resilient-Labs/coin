@@ -1,7 +1,7 @@
 <%- include('partials/header') -%>
 
 <body id="feed">
-  <a href="/logout" class="col-3 btn btn-outline-light">logout</a>
+  <a href="/logout" class="col-1 btn btn-outline-light">logout</a>
 
   <div class="container">
     <div class="row justify-content-center mt-5">
@@ -9,7 +9,7 @@
       </ul>
       
       <div class="left">
-        <h2  class="pendorder">Pending Orders</h2>
+        <h2 id="coffeeorder">Pending Orders</h2>
         <section class="card">
           <% for (let i=0; i<pending.length; i++) {%>
             <h3 class="card-header">
@@ -32,8 +32,8 @@
             <% } %>
         </section>
       </div>
-      <div class="right d-flex flex-column border-end m-2 rounded text-center p-2">
-        <h2 class="comporder">Complete Orders</h2>
+      <div class="right">
+        <h2 id="coffeeorder">Complete Orders</h2>
         <section class="card">
 
           <% for (let i=0; i<done.length; i++) {%>

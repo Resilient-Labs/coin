@@ -82,9 +82,9 @@
 /* card */
 
 .card {
-    width: 30%;
+    width: 70%;
     display: flex;
-    overflow-x: auto;
+    flex-direction: column;
     border: 1px solid orange;
 }
 
@@ -108,18 +108,17 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
-.left {
-    display: flex;
-    overflow-x: auto;
-}
-
 .pendorder {
-    color: white;
+    color:white;
 }
-
-.comporder {
-    color: white;
+#coffeeorder {
+    color:white;
+}
+.left {
+    width: 48%;
+}
+.right {
+    width: 48%;
 }
 
 /* end feed */
