@@ -1,60 +1,104 @@
 <%- include('partials/header') -%>
-<body id="index">
-    <main class="container">
-        <div class="row justify-content-around mt-5">
-            <a href="/login" class="col-3 btn btn-outline-light"> Login</a>
-            <a href="/signup" class="col-3 btn btn-outline-light"> Signup</a>
-        </div>
 
-        <div class="mt-5 indexformcontainer">
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-                <fieldset class="orderform">
-                    <legend>Choose your ghoulish Drink</legend>
 
-                    <input type="text" id="name" name="name" placeholder="Enter Name for Order" required><br>
+<div class="overflow-hidden">
+	<div class="container-fluid col-xxl-8">
+		<div class="row flex-lg-nowrap align-items-center g-5">
+			<div class="order-lg-1 w-100">
+				<img style="clip-path: polygon(25% 0%, 100% 0%, 100% 99%, 0% 100%);" src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768" class="d-block mx-lg-auto img-fluid" alt="Photo by Milad Fakurian" loading="lazy" srcset="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768 1080w, https://images.unsplash.com/photo-1618004912476-29818d81ae2e??crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=150 150w, https://images.unsplash.com/photo-1618004912476-29818d81ae2e??crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=300 300w, https://images.unsplash.com/photo-1618004912476-29818d81ae2e??crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=768 768w, https://images.unsplash.com/photo-1618004912476-29818d81ae2e??crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NzV8fHB1cnBsZXxlbnwwfDB8fHwxNjQ3NDcxNjY4&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1024 1024w" sizes="(max-width: 1080px) 100vw, 1080px" width="2160" height="768">
+			</div>
+			<div class="col-lg-6 col-xl-5 text-center text-lg-start pt-lg-5 mt-xl-4">
+				<div class="lc-block mb-4">
+					<div editable="rich">
+						<h1 class="fw-bold display-3">The quick brown fox jumps over the lazy dog</h1>
+					</div>
+				</div>
 
-                    <input type="radio" id="mothman" name="monster" value="Mothman Refresher">
-                    <label for="mothman">Mothman Refresher</label><br>
-                    <!-- <span>Lavender Lemonade Apple Berry Tea and a stab of cinnamon</span> -->
+				<div class="lc-block mb-5">
+					<div editable="rich">
+						<p class="rfs-8"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula malesuada placerat sit amet quis enim.</p>
+					</div>
+				</div>
+                
+				<div class="lc-block mb-6"><a class="btn btn-primary px-4 me-md-2 btn-lg" href="#" role="button">Sign Up</a>
+                    <div class="lc-block mb-6"><a class="btn btn-primary px-4 me-md-2 btn-lg" href="#" role="button">Login</a>
+				</div>
 
-                    <input type="radio" id="kraken" name="monster" value="Kraken Refresher">
-                    <label for="kraken">Kraken Refresher</label><br>
-                    <!-- <span></span> -->
+				<div class="lc-block">
+					<div editable="rich">
+						<p class="fw-bold"> Business collaboration based on trust:</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="lc-block col-3"><img class="img-fluid wp-image-975" src="https://lclibrary.b-cdn.net/starters/wp-content/uploads/sites/15/2021/11/motorola.svg" width="" height="300" srcset="" sizes="" alt=""></div>
+					<div class="lc-block col-3"><img class="img-fluid wp-image-977" src="https://lclibrary.b-cdn.net/starters/wp-content/uploads/sites/15/2021/11/asus.svg" width="" height="300" srcset="" sizes="" alt=""></div>
+					<div class="lc-block col-3"><img class="img-fluid wp-image-974" src="https://lclibrary.b-cdn.net/starters/wp-content/uploads/sites/15/2021/11/sony.svg" width="" height="300" srcset="" sizes="" alt=""></div>
+					<div class="lc-block col-3"><img class="img-fluid wp-image-967" src="https://lclibrary.b-cdn.net/starters/wp-content/uploads/sites/15/2021/11/samsung-282297.svg" width="" height="300" srcset="" sizes="" alt=""></div>
+				</div>
+			</div>
 
-                    <input type="radio" id="cthulu" name="monster" value="Cthulu Refresher">
-                    <label for="cthulu">Cthulu Refresher</label><br>
-                    <!-- <span>matcha caramel and sea salt</span> -->
+		</div><!-- /lc-block -->
+	</div>
+</div>
 
-                    <input type="radio" id="jack" name="monster" value="Jack-O'-Lantern Latte">
-                    <label for="jack">Jack-O'-Lantern Latte</label><br>
-                    <!-- <span>Pumpkin Spice Latte w/ chocolate syrup</span> -->
+<div class="container-fluid px-4 py-5 my-5 text-center">
+	<div class="lc-block d-block mx-auto mb-4">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="5em" height="5em" lc-helper="svg-icon" fill="currentColor">
+			<path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path>
+		</svg>
+	</div>
+	<div class="lc-block">
+		<div editable="rich">
 
-                    <input type="radio" id="trick" name="monster" value="Trick or Treat Latte">
-                    <label for="trick">Trick or Treat Latte</label><br>
-                    <!-- <span>Pecan and maple syrup latte</span> -->
+			<h2 class="display-5 fw-bold">The quick brown fox jumps over the lazy dog</h2>
 
-                    <input type="radio" id="witch" name="monster" value="True Witch's Brew">
-                    <label for="witch">True Witch's Brew</label><br>
-                    <!-- <span>Eye ball boba with almond milk and black tea</span> -->
+		</div>
+	</div>
+	<div class="lc-block col-lg-6 mx-auto mb-4">
+		<div editable="rich">
 
-                    <input type="radio" id="camp" name="monster" value="Campfire Fire">
-                    <label for="camp">Campfire Fire</label><br>
-                    <!-- <span>Hot Chocolate smores w/ a stab of cinnamon</span> -->
+			<p class="lead ">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
 
-                    <input type="radio" id="cider" name="monster" value="Caramel Apple Cider">
-                    <label for="cider">Caramel Apple Cider</label><br>
-                    <!-- <span>pink drink</span> -->
+		</div>
+	</div>
 
-                    <input type="radio" id="vanilla" name="monster" value="Vanilla Coffee">
-                    <label for="vanilla">Vanilla Coffee</label><br>
-                    <!-- <span>pink drink</span> -->
-                    <input type="text" id="custom" name="custom"
-                        placeholder="Add your annoying customizations here"><br>
-                </fieldset>
-                <button type="submit" class="btn btn-outline-light" value="Upload">Submit</button>
-            </form>
-        </div>
-    </main>
-</body>
+	<div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center"> <a class="btn btn-primary btn-lg px-4 gap-3" href="#" role="button">Click me, I'm a button</a>
+		<a class="btn btn-outline-secondary btn-lg px-4" href="#" role="button">Click me, I'm a button</a>
+	</div>
+</div>
+
+
+<div class="d-flex container-fluid" lc-helper="background" style="height:50vh;background:url(https://images.unsplash.com/photo-1530466951295-f13b9bceb117?ixlib=rb-1.2.1&amp;q=90&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1980&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9)  center / cover no-repeat;">
+</div>
+<div class="container p-5 bg-light" style="margin-top:-100px">
+	<div class="row">
+		<div class="col-md-4 text-center align-self-center">
+			<div class="lc-block border-end border-2 ">
+				<div editable="rich">
+					<p class="display-4 text-secondary">WHY?</p>
+				</div>
+			</div><!-- /lc-block -->
+		</div><!-- /col -->
+		<div class="col-md-8">
+			<div class="lc-block ">
+				<div editable="rich">
+					<p class="display-4">Think different and create a wonderful kind of digital agency.</p>
+				</div>
+			</div><!-- /lc-block -->
+		</div><!-- /col -->
+	</div>
+	<div class="row">
+		<div class="col-md-9 offset-md-1">
+			<div class="lc-block mt-5">
+				<div editable="rich">
+					<p class="lead text-secondary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In pellentesque scelerisque auctor.&nbsp;</p>
+					<p class="lead text-secondary">Ut porta lacus eget nisi fermentum lobortis. Vestibulum facilisis tempor
+						ipsum, ut rhoncus magna ultricies laoreet. Proin vehicula erat eget libero accumsan iaculis. </p>
+				</div>
+			</div><!-- /lc-block -->
+		</div><!-- /col -->
+	</div>
+</div>
+
 
     <%- include('partials/footer') -%>
