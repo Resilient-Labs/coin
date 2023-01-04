@@ -64,7 +64,7 @@ module.exports = {
       await Post.create({
         category: req.body.category,
         title: req.body.title,
-        cost: req.body.cost,
+        cost: req.body.expenseCost,
         incomeMonth: req.body.incomeMonth,
         expenseMonth: req.body.expenseMonth,
         total: req.body.total,
