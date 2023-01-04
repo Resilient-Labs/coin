@@ -1,23 +1,26 @@
 const mongoose = require("mongoose");
 
 const ExpenseSchema = new mongoose.Schema({
-<<<<<<< HEAD
 
-=======
->>>>>>> 53e1494d6f7d6f387303e554b9044fb196e69ce1
-  category: {
+
+
+//   category: {
+//     type: String,
+//     required: true,
+//   },
+//   expenseMonth: {
+//     type: String,
+//     required: true,
+//   },
+  expenseCost: {
     type: String,
     required: true,
   },
-  expenseMonth: {
-    type: String,
-    required: true,
+  isRecurring: {
+    type: Boolean,
+    default: false,
+    // added isRecurring as a Boolean to account for the recurring expenses to database, is set to default 'false' -Abdullahi Ali
   },
-  cost: { 
-    type: String,
-    required: true,
-  }
-  
 });
 
-module.exports = mongoose.model("Expense", ExpenseSchema); 
+module.exports = mongoose.model("Expense", ExpenseSchema);
