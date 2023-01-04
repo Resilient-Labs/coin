@@ -28,7 +28,7 @@
 
 /* login */
 #login {
-    background-image: url(./loginsignup.jpg);
+    /* background-image: url(./loginsignup.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -44,7 +44,7 @@
 
 /* signup */
 #signup {
-    background-image: url(./loginsignup.jpg);
+    /* background-image: url(./loginsignup.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -109,7 +109,7 @@
 
 /* feed */
 #feed {
-    background-image: url(./index.jpg);
+    /* background-image: url(./index.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
