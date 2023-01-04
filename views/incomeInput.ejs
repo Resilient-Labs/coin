@@ -1,6 +1,30 @@
 <%- include('partials/header') -%>
 <!--------------------JM: this is the bootstrap v5.0 layout component-------------------->
 <body>
+   <!-- ========= NAV BAR: OSCAR & TYANA ================== -->
+   <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-body-tertiary">
+    <a class="navbar-brand" href="#">
+      <img src="/imgs/coinNoBackground.png"  width="30" height="24">
+    </a> 
+  </div>
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/graphs">Dashboard</a>
+        <a class="nav-link" href="/expense">Expense</a>
+        <a class="nav-link" href="/income">Income</a>
+        <a class="nav-link" href="/logout">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
     <main>
       <section class="h-100 gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
