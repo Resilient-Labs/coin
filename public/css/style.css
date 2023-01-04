@@ -59,7 +59,23 @@
 /* end signup */
 
 /* index */
+#index {
+    background-image: url(./index.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
+.orderform {
+    color: white;
+    margin-bottom: 3%;
+}
+
+.indexformcontainer {
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+}
 
 /* end index */
 
