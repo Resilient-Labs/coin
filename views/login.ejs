@@ -1,78 +1,41 @@
 <%- include('partials/header') -%>
-<body id="login">
-<main class="container">
-  <!-- <div class="row justify-content-end">
-    <section class="" id="loginsection">
-      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-      <div class="alert alert-danger"><%= el.msg %></div>
-      <% }) %> <% } %> <% if (locals.messages.info) { %> <%
-      messages.info.forEach( el => { %>
-      <div class="alert alert-info"><%= el.msg %></div>
-      <% }) %> <% } %>
-      <form action="/login" method="POST">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            name="password"
-          />
-        </div>
-        <button type="submit" class="btn btn-outline-light">Submit</button>
-      </form>
-      <p>Need an account? <a href="/signup">Signup</a> Or go <a href="/">home</a>.</p>
-    </section>
-  </div> -->
 
-  <div class="container right-panel-active">
-    <!-- Sign Up -->
-    <div class="container__form container--signup">
-      <form action="/signup" method="post" class="form" id="form1">
-        <h2 class="form__title">Sign Up</h2>
-        <input type="text" placeholder="Full Name" class="input" name="email" />
-        <input type="text" placeholder="Title" class="input" name="title" />
-        <input type="password" placeholder="Password" class="input" name="password" />
-        <button  type="submit" class="btn">Sign Up</button>
-      </form>
-    </div>
-  
-    <!-- Sign In -->
-    <div class="container__form container--signin">
-      <form action="/login" method="post" class="form" id="form2">
-        <h2 class="form__title">Sign In</h2>
-        <input type="text" placeholder="Full Name" class="input" name="email" />
-        <input type="password" placeholder="Password" class="input" name="password" />
-
-        <button type="submit" class="btn">Sign In</button>
-      </form>
-    </div>
-  
-    <!-- Overlay -->
-    <div class="container__overlay">
-      <div class="overlay">
-        <div class="overlay__panel overlay--left">
-          <button class="btn" id="signIn">Sign In</button>
-        </div>
-        <div class="overlay__panel overlay--right">
-          <button class="btn" id="signUp">Sign Up</button>
-        </div>
+  <body id="login">
+    <main class="container">
+      <div class="row justify-content-end">
+        <section class="" id="loginsection">
+          <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el=> { %>
+              <div class="alert alert-danger">
+                <%= el.msg %>
+              </div>
+              <% }) %>
+                <% } %>
+                  <% if (locals.messages.info) { %>
+                    <% messages.info.forEach( el=> { %>
+                      <div class="alert alert-info">
+                        <%= el.msg %>
+                      </div>
+                      <% }) %>
+                        <% } %>
+                          <form action="/login" method="POST">
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Email address</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" name="email" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label">Password</label>
+                              <input type="password" class="form-control" id="exampleInputPassword1" name="password" />
+                            </div>
+                            <button type="submit" class="btn btn-outline-dark">Submit</button>
+                          </form>
+                          <p>Need an account? <a href="/signup">Signup</a> Or go <a href="/">home</a>.</p>
+        </section>
       </div>
-    </div>
-  </div>
 
-</main>
-</body>
-<%- include('partials/footer') -%>
+
+
+    </main>
+  </body>
+  <%- include('partials/footer') -%>

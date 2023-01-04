@@ -10,7 +10,7 @@ module.exports = {
       //this is looking for all the orders marked as done
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
       const order = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", {
+      res.render("dashboard.ejs", {
         posts: posts,
         order: order,
         pending: pending,

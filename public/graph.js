@@ -24,9 +24,9 @@ async function renderChart() {
       .render(document.getElementById('chart'))
 
     //refreshes page 
-      window.onload=function(){
-        document.getElementById('refresh').addEventListener('click', () => chart.refresh());
-      }
+      // window.onload=function(){
+      //   document.getElementById('refresh').addEventListener('click', () => chart.refresh());
+      // }
       
       let element = document.querySelector(".body-content")
   
