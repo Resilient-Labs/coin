@@ -5,10 +5,6 @@
     color: black;
 }
 
-.navbar-expand-lg{
-  background:white;
-}
-
 /* partial: header */
 .partialsheadertext {
     font-family: 'Uncial Antiqua', cursive;
@@ -59,12 +55,15 @@
     color: white;
     margin-top: 5%;
 }
+#heroPicture{
+    background-color: rgb(238, 255, 253);
+}
 
 /* end signup */
 
 /* index */
 #index {
-    /* background-image: url(./index.jpg); */
+    background-image: url(./index.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -79,6 +78,9 @@
     display: flex;
     justify-content: center;
     margin-left: 15%;
+}
+#heroText{
+   margin-top: 40%;
 }
 
 /* end index */
@@ -127,109 +129,8 @@
 
 /* end feed */
 
-/* Pie Chart */
-.chartInfo {
-    font-size: 20px;
-    width: 520px;
-    margin: 5%;
-  }
-  
-  .chart-title {
-    text-align: center;
-    color: #89989b;
-  }
-  
-  #chartDataButton {
-    margin-top: 1em;
-    padding: 0.5rem 1rem;
-    width: 100%;
-  }
-  
-  /* JSON Viewer */
-  #jsonViewer {
-    visibility: hidden;
-    transition: background-color 0.5s ease;
-    --background-color: var(--bg-light-mode-color);
-    --string-color: #00a35c;
-    --preview-color: #ffc010;
-    --property-color: #0498ec;
-    --number-color: #b45af2;
-    --boolean-color: #ef5752;
-  }
-  body.dark-mode #jsonViewer {
-    --background-color: var(--bg-dark-mode-color);
-    --string-color: #00ed64;
-    --preview-color: #ffec9e;
-  }
-
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #c5e4f2;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    box-shadow: #bdc3c7 0px 0px 10px 1px;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #1a567e;
-    box-shadow: #2c3e50 0px 0px 10px 1px;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #1a567e;
-    box-shadow: #2c3e50 0px 0px 10px 1px;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-  
-  
-
-/* End Pie Chart */
+/*  */
+/*  */
 
 /*  */
 /*  */
