@@ -5,6 +5,10 @@
     color: black;
 }
 
+.navbar-expand-lg{
+  background:white;
+}
+
 /* partial: header */
 .partialsheadertext {
     font-family: 'Uncial Antiqua', cursive;
@@ -60,7 +64,7 @@
 
 /* index */
 #index {
-    background-image: url(./index.jpg);
+    /* background-image: url(./index.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
