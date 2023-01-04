@@ -1,6 +1,14 @@
 /*============= sm/JM: THIS IS THE CSS FILE
 RELATED TO THE INCOME INPUT PAGE =============*/
 
+.incomeImg{
+    background-image: url('../imgs/incomeIMG.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
 /*============= JM: BOOTSTRAP =============*/
 .gradient-custom-2 {
     /* fallback for old browsers */
