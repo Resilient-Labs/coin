@@ -30,6 +30,16 @@ module.exports = {
       console.log(err);
     }
   },
+  getDashboard: async (req, res) => {
+    try {
+
+      res.render("dashboard.ejs", {
+      
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getFeed: async (req, res) => {
     try {
       const pending = await Post.find({ completed: 'pending' })
@@ -65,13 +75,13 @@ module.exports = {
       await Post.create({
         category: req.body.category,
         title: req.body.title,
-        cost: req.body.cost,
+        cost: req.body.expenseCost,
         incomeMonth: req.body.incomeMonth,
         expenseMonth: req.body.expenseMonth,
         total: req.body.total,
       });
       console.log("Post has been added!");
-      res.redirect("/profile");
+      res.redirect("/dashboard");
     } catch (err) {
       console.log(err);
     }
@@ -87,7 +97,7 @@ module.exports = {
         }
       );
       console.log('order marked as pending');
-      res.redirect(`/profile`);
+      res.redirect(`/dashboard`);
     } catch (err) {
       console.log(err);
     }
@@ -97,9 +107,9 @@ module.exports = {
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/profile");
+      res.redirect("/dashboard");
     } catch (err) {
-      res.redirect("/profile");
+      res.redirect("/dashboard");
     }
   },
 };
