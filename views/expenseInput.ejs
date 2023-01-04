@@ -9,12 +9,17 @@
 <body>
   <div>
     <section>
-      <form>
+      <form id="newExpense">
         <input name="expenseName" type="text" placeholder="Title" />
         <!-- EXPENSE CATEGORY [can connect to a DB database]-->
         <!-- Expense Back-End Team removed for loop as data is not reflected in the DB yet, and therefore, making the page crash. We kept the code, and once we know the collection name and have data to plug in, we will replug it into the EJS.-->
         <!-- Add input for month -->
         <input name="expenseCost" type="number" placeholder="cost" />
+        <span>Is this a reoccuring expense?</span>
+        <input type="radio" value="reoccuring" id="isRepeating" />
+        <label for="isRepeating">Yes</label>
+        <input type="radio" value="oneTime" id="notRepeating" />
+        <label for="notRepeating">No</label>
         <button>Add</button>
         <button>Clear</button>
       </form>
