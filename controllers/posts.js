@@ -61,7 +61,6 @@ module.exports = {
   createPost: async (req, res) => {
     console.log(req.body);
     try {
-      //Use post schema in models to create and save a document to Mongo DB Atlas
       await Post.create({
         category: req.body.category,
         title: req.body.title,
@@ -76,6 +75,7 @@ module.exports = {
       console.log(err);
     }
   },
+  // Line 51-67...This will create and save documents based on post schema, this will be sent to Mongo DB Atlas... - Abdullahi Ali
   complete: async (req, res) => {
     try {
       await Post.findOneAndUpdate(
