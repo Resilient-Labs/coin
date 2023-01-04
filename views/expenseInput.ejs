@@ -10,7 +10,7 @@
   <div>
     <section>
       <form>
-        <input type="text" placeholder="Title" />
+        <input name="expenseName" type="text" placeholder="Title" />
         <!-- EXPENSE CATEGORY [can connect to a DB database]-->
         <select>
           <% for(let i=0; i < categories.length; i++){ %>
@@ -18,7 +18,7 @@
           <% } %>
           <option>Miscellaneous</option>
         </select>
-        <input type="number" placeholder="cost" />
+        <input name="expenseCost" type="number" placeholder="cost" />
         <button>Add</button>
         <button>Clear</button>
       </form>
