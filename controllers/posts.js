@@ -49,22 +49,16 @@ module.exports = {
     }
   },
   createPost: async (req, res) => {
+    console.log(req.body);
     try {
+      //Use post schema in models to create and save a document to Mongo DB Atlas
       await Post.create({
-        name: req.body.name,
-        order: req.body.monster,
-        custom: req.body.custom
-
-        // mothman: req.body.mothman,
-        // kraken: req.body.kraken,
-        // cuthulu: req.body.cuthulu,
-        // jack: req.body.jack,
-        // trick: req.body.trick,
-        // witch: req.body.witch,
-        // camp: req.body.camp,
-        // cider: req.body.cider,
-        // vanilla: req.body.vanilla,
-
+        category: req.body.category,
+        title: req.body.title,
+        cost: req.body.cost,
+        incomeMonth: req.body.incomeMonth,
+        expenseMonth: req.body.expenseMonth,
+        total: req.body.total,
       });
       console.log("Post has been added!");
       res.redirect("/profile");
