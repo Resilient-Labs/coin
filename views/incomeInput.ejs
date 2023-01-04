@@ -3,12 +3,12 @@
     <main>
 
         <!--------------------SM: this is the bootstrap v5.0 form component for the user to input their income-------------------->
-        <form>
+        <form action="/updateIncome" method="POST">
             <div class="mb-3">
               <label for="inputIncome" class="form-label">Total</label>
               <!------------------SM: I USED THE STEP ATTRIBUTE TO ALLOW FOR DECIMAL PLACES FOR
             CALCULATING BUDGET IN 0.00 FORMAT-------------------------->
-              <input type="number" min="1" step="any" class="form-control" id="inputIncome1">
+              <input name="income" type="number" min="1" step="any" class="form-control" id="inputIncome1">
               <!-------------------SM: OPTIONAL HELP TEXT FOR USER---------------->
               <div id="emailHelp" class="form-text">Please enter in 0.00 format.</div>
             </div>

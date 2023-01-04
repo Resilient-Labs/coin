@@ -20,16 +20,7 @@ module.exports = {
       console.log(err);
     }
   },  
-  getIncome: async (req, res) => {
-    try {
 
-      res.render("incomeInput.ejs", {
-      
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  },
   getFeed: async (req, res) => {
     try {
       const pending = await Post.find({ completed: 'pending' })
