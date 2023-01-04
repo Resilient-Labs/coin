@@ -5,7 +5,7 @@ module.exports = {
   // navigate to expense page
     getExpenses: async (req, res) => {
       console.log("navigated to expense page"); 
-      const expense = await Expense.find({ user: req.user.id });
+      const expense = await Expense.find(req.params.id);
       console.log(expense)
       try{
         res.render("expenseInput.ejs", {expense: expense});
