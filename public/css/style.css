@@ -129,7 +129,15 @@
 
 /* end feed */
 
-/*  */
+/* CHART */
+#chart {
+    border-top: none;
+    flex-grow: 1;
+    height: 700px;
+    width: 700px;
+    margin: 5%;
+    background-color: #21313c;
+  }
 /*  */
 
 /*  */
