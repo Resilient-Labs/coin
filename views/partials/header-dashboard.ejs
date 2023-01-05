@@ -19,13 +19,33 @@
 </head>
 
 <body>
-  <header class="container">
+  <!-- <header class="container">
     <div class="text-center">
-      <h1 class="partialsheadertext"><a id="link" id="headerlink" href="/profile">The Coven Room</a></h1>
+      <h1 class="partialsheadertext"><a id="link" id="headerlink" href="/dashboard">The Coven Room</a></h1>
       <span class="headersubtext">Spooky Drinks for the late night Ghouls</span>
     </div>
-  </header>
-  <!-- For Pie Chart -->
+  </header> -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-body-tertiary">
+    <a class="navbar-brand" href="#">
+      <img src="/imgs/coinNoBackground.png"  width="30" height="24">
+    </a> 
+  </div>
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/dashboard">Dashboard</a>
+        <a class="nav-link" href="/expense">Expense</a>
+        <a class="nav-link" href="/income">Income</a>
+        <a class="nav-link" href="/logout">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+  <!-- For Pie Chart MUST STAY -->
   <script src="https://unpkg.com/@mongodb-js/charts-embed-dom"></script>
   <script src="https://unpkg.com/@alenaksu/json-viewer@2.0.0/dist/json-viewer.bundle.js"></script>
   <script type="module" src="./graph.js"></script>

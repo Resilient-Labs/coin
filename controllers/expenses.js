@@ -5,8 +5,10 @@ module.exports = {
   // navigate to expense page
     getExpenses: async (req, res) => {
       console.log("navigated to expense page"); 
+      const expense = await Expense.find(req.params.id);
+      console.log(expense)
       try{
-        res.render("expenseInput.ejs", );
+        res.render("expenseInput.ejs", {expense: expense});
       } catch (err) {
         console.log(err);
       }
@@ -14,14 +16,17 @@ module.exports = {
     createExpenses: async (req, res) => {
       try {
         // Upload image to cloudinary
-       
-  
         await Expense.create({
-          category: req.body.expenseName,
-          expenseMonth: result.secure_url,
-          cost: req.body.expenseCost
-       
+          // category: req.body.category,
+          expenseName: req.body.expenseName,
+          expenseCost: req.body.expenseCost,
+          // incomeMonth: req.body.incomeMonth,
+          // expenseMonth: req.body.expenseMonth,
+          // total: req.body.total,
+          isReccuring: req.body.value
         });
+        console.log(req.body.expenseName)
+        console.log(req.body.expenseCost)
         console.log("Expenses have been added!");
         res.redirect("/expenseInput");
       } catch (err) {
@@ -29,23 +34,6 @@ module.exports = {
       }
     }
     
-    // getFeed: async (req, res) => {
-    //   try {
-    //     const pending = await Post.find({ completed: 'pending' })
-    //     const done = await Post.find({ completed: 'done' })
-    //     const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-    //     const order = await Post.find().sort({ createdAt: "desc" }).lean();
-    //     console.log(pending)
-    //     res.render("feed.ejs", {
-    //       posts: posts,
-    //       order: order,
-    //       pending: pending,
-    //       done: done
-    //     });
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // },
     // getPost: async (req, res) => {
     //   try {
     //     const post = await Post.findById(req.params.id);
