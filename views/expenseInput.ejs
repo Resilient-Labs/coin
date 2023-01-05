@@ -1,12 +1,4 @@
 <%- include('partials/header') -%>
-
-<main class="container">
-  <div class="row justify-content-around mt-5">
-    <a href="/login" class="col-3 btn btn-primary"> Login</a>
-    <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
-  </div>
-</main>
-<body>
   <!-- ========= NAV BAR: OSCAR & TYANA ================== -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-body-tertiary">
     <a class="navbar-brand" href="#">
@@ -28,9 +20,6 @@
     </div>
   </div>
 </nav>
-
-
-
   <div>
     <section>
       <form id="newExpense">
@@ -38,18 +27,19 @@
         <!-- EXPENSE CATEGORY [can connect to a DB database]-->
         <!-- Expense Back-End Team removed for loop as data is not reflected in the DB yet, and therefore, making the page crash. We kept the code, and once we know the collection name and have data to plug in, we will replug it into the EJS.-->
         <!-- Add input for month -->
-        <input name="expenseCost" type="number" placeholder="cost" />
-        <span>Is this a reoccuring expense?</span>
-        <input name="isRecurring" type="radio" value="" id="isRepeating" />
-        <label for="isRecurring">Yes</label>
-        <input name="isRecurring" type="radio" value="" id="notRepeating" />
-        <label for="notRepeating">No</label>
-        <button>Add</button>
-        <button>Clear</button>
+        <input  min="1" step="any" class="form-control" name="expenseCost" type="number" placeholder="cost" />
+        <span class="form-text">Is this a reoccuring expense?</span>
+        <input name="isRecurring" type="radio" value="reoccuring" id="isRepeating" class="form-control"/>
+        <label for="isRepeating" class="form-label">Yes</label>
+        <input name="isRecurring" type="radio" value="oneTime" id="notRepeating" class="form-control"/>
+        <label for="notRepeating" class="form-label">No</label>
+        <input type="date" class="form-control" name="month"/>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="delete" class="btn btn-primary">Clear</button>
       </form>
     </section>
     <section>
-      <img />
+      <img class="expenseImg"/>
     </section>
   </div>
 </body>
