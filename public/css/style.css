@@ -60,14 +60,11 @@ h3{
     box-shadow: 0 2px 4px rgba(101, 100, 100, 0.4);
     width:30%;
 }
-#heroPicture{
-    background-color: rgb(238, 255, 253);
-}
 
 /* end signup */
 
 /* index */
-#index {
+/* #index {
     background-image: url(./index.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -83,10 +80,29 @@ h3{
     display: flex;
     justify-content: center;
     margin-left: 15%;
+} */
+body{
+    background-color: rgb(14, 80, 230);
 }
 #heroText{
    margin-top: 40%;
+   background-color: rgb(238, 255, 253);
 }
+#heroPicture{
+    background-color: rgb(238, 255, 253);
+}
+#topBlock{
+    background-color: rgb(238, 255, 253);
+}
+#middleBlock{
+    background-color: rgb(14, 80, 230);
+    color: whitesmoke;
+}
+#bottomBlock{
+    background-color: rgb(165, 243, 255);
+    color: whitesmoke;
+}
+
 
 /* end index */
 

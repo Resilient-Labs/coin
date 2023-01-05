@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
+const IncomeSchema = new mongoose.Schema({
 
-  incomeMonth: {
+  income: {
     type: String,
     required: true,
   },
-  total: {
-    type: String,
-    required: true,
-  }
-  
-});
+  userid: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+ 
+}, { _id : false });
 
-module.exports = mongoose.model("income", PostSchema); 
+module.exports = mongoose.model("income", IncomeSchema); 
