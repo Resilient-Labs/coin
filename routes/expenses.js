@@ -5,8 +5,11 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth")
 
 //Expenses Routes - simplified for now
 
-router.get("/:id", ensureAuth, expensesController.getExpenseData)
+router.get("/:id", ensureAuth, expensesController.getExpenseData);
 router.post("/createExpenses", expensesController.createExpenses);
+router.put("/editExpenseData/:id",  expensesController.editExpenseData)
+router.delete("/deleteExpenseData/:id",  expensesController.deleteExpenseData)
+
 
 
 module.exports = router;
