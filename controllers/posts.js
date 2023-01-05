@@ -19,7 +19,17 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
-  }, 
+  },  
+  getIncome: async (req, res) => {
+    try {
+
+      res.render("incomeInput.ejs", {
+      
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getDashboard: async (req, res) => {
     try {
 
