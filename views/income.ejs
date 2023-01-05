@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="/graphs">Dashboard</a>
+        <a class="nav-link" href="/dashboard">Dashboard</a>
         <a class="nav-link" href="/expense">Expense</a>
         <a class="nav-link" href="/income">Income</a>
         <a class="nav-link" href="/logout">Logout</a>
@@ -47,7 +47,7 @@
                       </div>
       
                       <!--------------------SM: this is the bootstrap v5.0 form component for the user to input their income-------------------->
-                      <form>
+                      <form action="/updateIncome" method="POST">
                         <div class="mb-3">
                           <label for="inputIncome" class="form-label">Total</label>
                           <!------------------SM: I USED THE STEP ATTRIBUTE TO ALLOW FOR DECIMAL PLACES FOR

@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="/graphs">Dashboard</a>
+        <a class="nav-link" href="/dashboard">Dashboard</a>
         <a class="nav-link" href="/expense">Expense</a>
         <a class="nav-link" href="/income">Income</a>
         <a class="nav-link" href="/logout">Logout</a>
@@ -22,7 +22,7 @@
 </nav>
   <div>
     <section>
-      <form id="newExpense">
+      <form id="newExpense"  action="/expenses/createExpenses/" enctype="multipart/form-data" method="POST">
         <input name="expenseName" type="text" placeholder="Title" />
         <!-- EXPENSE CATEGORY [can connect to a DB database]-->
         <!-- Expense Back-End Team removed for loop as data is not reflected in the DB yet, and therefore, making the page crash. We kept the code, and once we know the collection name and have data to plug in, we will replug it into the EJS.-->
