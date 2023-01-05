@@ -46,8 +46,13 @@
                         <h4 class="mt-1 mb-5 pb-1">Track Your Coins</h4>
                       </div>
       
-                      <!--------------------SM: this is the bootstrap v5.0 form component for the user to input their income-------------------->
+                      <!--------------------JM: Input Income Date-------------------->
                       <form action="/updateIncome" method="POST">
+                        <div class="mb-3">
+                          <label for="inputIncomeDate" class="form-label">Month</label>
+                          
+                          <input type="month" class="form-control" id="inputIncomeDate" name="userIncomeDate">
+                        </div>
                         <div class="mb-3">
                           <label for="inputIncome" class="form-label">Total</label>
                           <!------------------SM: I USED THE STEP ATTRIBUTE TO ALLOW FOR DECIMAL PLACES FOR
