@@ -28,11 +28,20 @@ module.exports = {
     // post request to create an expense from inputs from the DOM
     createExpenses: async (req, res) => {
       console.log("expense created!")
+      console.log(req.body)
+
+      // let isReq = false;
+      // if(req.body.value == "true") {
+      //   isReq = true
+      // }else {
+      //   isReq = false
+      // }
+
       try {
         await Expense.create({
           expenseName: req.body.expenseName,
           expenseCost: req.body.expenseCost,
-          isReccuring: req.body.value
+          isRecurring: req.body.isRecurring
         });
         console.log("Expenses have been added!");
         res.redirect("/expense");

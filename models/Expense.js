@@ -15,7 +15,7 @@ const ExpenseSchema = new mongoose.Schema({
   },
   isRecurring: {
     type: Boolean,
-    default: false,
+    default: false
   //   // added isRecurring as a Boolean to account for the recurring expenses to database, is set to default 'false' -Abdullahi Ali
   },
 });
