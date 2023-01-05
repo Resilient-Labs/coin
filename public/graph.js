@@ -48,3 +48,40 @@ async function renderChart() {
   
   
   renderChart().catch((e) => window.alert(e.message));
+
+
+
+
+
+  // ------------------JM: INCOME TABLE (edit&delete)----------------------
+  function editEvent(_id) {
+    let incomeEdit = document.querySelector('.updateIncome').value
+    fetch('/incomes/edit', {
+      method: 'put',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        '_id': _id,
+        'eventtitle': eventtitle,
+      })
+    })
+      .then(response => {
+        if (response.ok) return response.json()
+      })
+      .then(data => {
+        console.log(data)
+        window.location.href = `/incomes/${_id}`
+      })
+  }
+  function deleteEvent(_id) {
+    fetch('/incomes/deleteincomes', {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        '_id': _id
+      })
+    }).then(function (response) {
+      window.location.href = '/gallery'
+    })
+  }
