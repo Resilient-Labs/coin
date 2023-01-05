@@ -51,6 +51,7 @@
 h3{
     text-align: center;
 }
+<<<<<<< HEAD
 #signupsection {
     background-color: white;
     margin:auto;
@@ -60,6 +61,8 @@ h3{
     box-shadow: 0 2px 4px rgba(101, 100, 100, 0.4);
     width:30%;
 }
+=======
+>>>>>>> b5cd2587363f8a798a31c4053b28b384831b04b2
 
 /* end signup */
 
@@ -81,7 +84,11 @@ h3{
     justify-content: center;
     margin-left: 15%;
 } */
+<<<<<<< HEAD
 body{
+=======
+#indexBody{
+>>>>>>> b5cd2587363f8a798a31c4053b28b384831b04b2
     background-color: rgb(14, 80, 230);
 }
 #heroText{
