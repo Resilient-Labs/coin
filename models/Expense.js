@@ -1,25 +1,22 @@
 const mongoose = require("mongoose");
 
 const ExpenseSchema = new mongoose.Schema({
-
-
-
-//   category: {
-//     type: String,
-//     required: true,
-//   },
-//   expenseMonth: {
-//     type: String,
-//     required: true,
-//   },
-  expenseCost: {
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  expenseName: {
     type: String,
-    required: true,
+    required: false,
+  },
+  expenseCost: {
+    type: Number,
+    required: false,
   },
   isRecurring: {
     type: Boolean,
     default: false,
-    // added isRecurring as a Boolean to account for the recurring expenses to database, is set to default 'false' -Abdullahi Ali
+  //   // added isRecurring as a Boolean to account for the recurring expenses to database, is set to default 'false' -Abdullahi Ali
   },
 });
 
