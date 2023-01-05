@@ -28,32 +28,37 @@
 
 /* login */
 #login {
-    /* background-image: url(./loginsignup.jpg); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #edfffd;
 }
 
 #loginsection {
-    width: 30%;
-    color: white;
-    margin-top: 10%;
+    background-color: white;
+    margin:auto;
+    border:1px solid #c7c7c7;
+    padding:20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(101, 100, 100, 0.4);
+    width:30%;
+    /* margin-top: 10%; */
 }
 
 /* end login */
 
 /* signup */
 #signup {
-    /* background-image: url(./loginsignup.jpg); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #edfffd;
 }
-
+h3{
+    text-align: center;
+}
 #signupsection {
-    width: 30%;
-    color: white;
-    margin-top: 5%;
+    background-color: white;
+    margin:auto;
+    border:1px solid #c7c7c7;
+    padding:20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(101, 100, 100, 0.4);
+    width:30%;
 }
 #heroPicture{
     background-color: rgb(238, 255, 253);
