@@ -1,3 +1,7 @@
+<!-- <head>
+  <link rel="stylesheet" href="/public/css/incomeInput.css">
+</head> -->
+
 <body>
    <!-- ========= NAV BAR: OSCAR & TYANA ================== -->
    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-body-tertiary">
@@ -5,6 +9,8 @@
       <img src="/imgs/coinNoBackground.png"  width="30" height="24">
     </a> 
   </div>
+
+
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,7 +20,7 @@
         <a class="nav-link active" aria-current="page" href="/">Home</a>
         <a class="nav-link" href="/dashboard">Dashboard</a>
         <a class="nav-link" href="/expense">Expense</a>
-        <a class="nav-link" href="/income">Income</a>
+        <a class="nav-link" href="/incomeInput">Income</a>
         <a class="nav-link" href="/logout">Logout</a>
       </div>
     </div>
@@ -24,15 +30,22 @@
 
 <!--------------------JM: this is the bootstrap v5.0 layout component-------------------->
     <main>
-      <section class="h-100 gradient-form" style="background-color: #eee;">
+      <section class="h-100 gradient-form" style="background-color: rgb(254, 254, 254);">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-10">
               <div class="card rounded-3 text-black">
                 <div class="row g-0">
                   <div class="col-lg-6">
+                    
                     <section class="incomeImg">
-
+                      <div class="leftSide">
+                        <div class="text-center">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                            style="width: 185px;" alt="logo">
+                          <h4 class="mt-1 mb-5 pb-1">Track Your Coinssss</h4>
+                        </div>
+                      </div>
                     </section>
                     
                   </div>
@@ -40,26 +53,28 @@
                   <div class="col-lg-6">
                     <div class="card-body p-md-5 mx-md-4">
       
-                      <div class="text-center">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                          style="width: 185px;" alt="logo">
-                        <h4 class="mt-1 mb-5 pb-1">Track Your Coins</h4>
-                      </div>
-      
+                      
                       <!--------------------SM: this is the bootstrap v5.0 form component for the user to input their income-------------------->
+
+                      <div class="rightSide">
                       <form>
                         <div class="mb-3">
                           <label for="inputIncome" class="form-label">Total</label>
                           <!------------------SM: I USED THE STEP ATTRIBUTE TO ALLOW FOR DECIMAL PLACES FOR
                         CALCULATING BUDGET IN 0.00 FORMAT-------------------------->
-                          <input type="number" min="1" step="any" class="form-control" id="inputIncome1" name="userIncome">
+                          <input type="number"  min="1" step="any" class="form-control" id="inputIncome1" name="userIncome">
+                          <input type="date" class="form-control" id="inputIncomeDate" name="incomeDate">
                           <!-------------------SM: OPTIONAL HELP TEXT FOR USER---------------->
                           <div id="emailHelp" class="form-text">Please enter in 0.00 format.</div>
                         </div>
                         <button type="submit" class="btn btn-primary">Add</button>
                         <button type="delete" class="btn btn-primary">Clear</button>
                       </form>
-      
+                    </div>
+
+
+
+
                     </div>
                   </div>
                 </div>
