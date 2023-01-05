@@ -40,6 +40,8 @@ module.exports = {
         console.log(err);
       }
     },
+    //edit expenses
+
     // put request to update current expense information
     editExpenseData: async (req, res) => {
       console.log("making a PUT expense request")
