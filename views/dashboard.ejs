@@ -21,33 +21,31 @@
           <div class="col-md-6">
             <!----------------SM: !!PLEASE REPLACE WITH EXPENSES TOTAL AND BUTTONS!! ------------------------>
             <h3 id="total-amount">$4500.00</h3>
-            <!----------------SM: add new expense and add new income buttons ------------------------>
-            <button type="button" class="btn btn-success"><a href="/expense"></a>Button</button>
-            <button type="button" class="btn btn-success"><a href="/income"></a>Button</button>
+            <!----------------SM/JM: add new expense and add new income buttons ------------------------>
+            <button type="button" class="btn btn-success"><a href="/expense"></a>Expense</button>
+            <button type="button" class="btn btn-success"><a href="/income"></a>Income</button>
           </div>
-          
         </div>
-  
         <div class="row">
           <div class="col-md-6">
-            <!----------------SM: !!PLEASE REPLACE WITH EXPENSES TABLE!! ------------------------>
+            <!----------------JM: INCOME TABLE TO POPULATE MONTHLY INCOME INPUTS ------------------------>
             <table class="table">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Product</th>
-                  <th>Payment Taken</th>
-                  <th>Status</th>
+                  <th>Month</th>
+                  <th>Income</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>TB - Monthly</td>
-                  <td>01/04/2012</td>
-                  <td>Default</td>
+                  <td>ejs to grab date</td>
+                  <td class="updateIncome">ejs for income</td>
+                  <td><button id="incomeTableEdit">Edit</button></td>
+                  <td><button id="incomeTableDelete">Delete</button></td>
                 </tr>
-                <tr class="table-active">
+                <!-- <tr class="table-active">
                   <td>1</td>
                   <td>TB - Monthly</td>
                   <td>01/04/2012</td>
@@ -70,7 +68,7 @@
                   <td>TB - Monthly</td>
                   <td>04/04/2012</td>
                   <td>Call in to confirm</td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
