@@ -1,6 +1,6 @@
 
 //Charts render in profile.ejs
-
+// changes 
 
 //connects to MongoDB Charts SDK via link in html/ejs
 const ChartsEmbedSDK = window.ChartsEmbedSDK;
