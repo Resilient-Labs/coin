@@ -1,4 +1,19 @@
-<%- include('partials/header') -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/expenseInput.css">
+</head>
+<body>
   <!-- ========= NAV BAR: OSCAR & TYANA ================== -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-body-tertiary">
     <a class="navbar-brand" href="#">
@@ -22,53 +37,36 @@
     </div>
   </nav>
   <main>
-    <section class="h-100 gradient-form" style="background-color: #eee;">
+    <section class="vh-100" style="background-color: #e7e4e4;">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-xl-10">
-            <div class="card rounded-3 text-black">
+          <div class="col col-xl-10">
+            <div class="card" style="border-radius: 1rem;">
               <div class="row g-0">
-
-
-                <div class="col-lg-6">
-                  <div class="card-body p-md-5 mx-md-4">
-
-
-                    <div>
-                      <section>
-                        <div class="col-lg-6">
-                          <div class="text-center">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                              style="width: 185px;" alt="logo">
-                            <h4 class="mt-1 mb-5 pb-1">Track Your Expenses</h4>
-                          </div>
-                          <form id="newExpense" action="/expenses/createExpenses/" method="POST">
-                            <input name="expenseName" type="text" placeholder="Title">
-                            <!-- EXPENSE CATEGORY [can connect to a DB database]-->
-                            <!-- Expense Back-End Team removed for loop as data is not reflected in the DB yet, and therefore, making the page crash. We kept the code, and once we know the collection name and have data to plug in, we will replug it into the EJS.-->
-                            <!-- Add input for month -->
-                            <input name="expenseCost" type="number" placeholder="cost">
-                            <span>Is this a reoccuring expense?</span>
-                            <input name="isRecurring" value="true" type="radio" id="isRepeating">
-                            <label for="isRecurring">Yes</label>
-                            <input name="isRecurring" value="false" type="radio" id="notRepeating">
-                            <label for="notRepeating">No</label>
-                            <input type="date" class="form-control" name="date" />
-                            <select name="category" class="form-control" aria-label="Default select example" placeholder="Choose An Expense Category">
-                              <option value="rent" name="rent">Rent</option>
-                              <option value="utilities" name="utilities">Utilities</option>
-                              <option value="food" name="food">Food</option>
-                              <option value="transportation" name="transportation">Transportation</option>
-                              <option value="miscellaneous" name="miscellaneous">Miscellaneous</option>
-                            </select>
-                            <button type="submit" class="btn btn-primary">Add</button>
-                            <button type="delete" class="btn btn-primary">Clear</button>
-                          </form>
-                      </section>
-                      <section>
-                        <img />
-                      </section>
-                    </div>
+                <div class="col-md-6 col-lg-5 d-none d-md-block">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                    alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                </div>
+                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-5 text-black">
+    
+                    <form id="newExpense" action="/expenses/createExpenses/" method="POST">
+                      <input name="expenseName" type="text" placeholder="Title">
+                      <!-- EXPENSE CATEGORY [can connect to a DB database]-->
+                      <!-- Expense Back-End Team removed for loop as data is not reflected in the DB yet, and therefore, making the page crash. We kept the code, and once we know the collection name and have data to plug in, we will replug it into the EJS.-->
+                      <!-- Add input for month -->
+                      <input name="expenseCost" type="number" placeholder="cost">
+                      <input type="date" class="form-control" name="date" />
+                      <select name="category" class="form-control" aria-label="Default select example" placeholder="Choose An Expense Category">
+                        <option value="Rent" name="Rent">Rent</option>
+                        <option value="Utilities" name="Utilities">Utilities</option>
+                        <option value="Food" name="Food">Food</option>
+                        <option value="Transportation" name="Transportation">Transportation</option>
+                        <option value="Miscellaneous" name="Miscellaneous">Miscellaneous</option>
+                      </select>
+                      <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+    
                   </div>
                 </div>
               </div>
@@ -77,10 +75,7 @@
         </div>
       </div>
     </section>
-
-
-
-
+    
 
   </main>
 

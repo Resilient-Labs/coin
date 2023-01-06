@@ -24,10 +24,17 @@ module.exports = {
   getDashboard: async (req, res) => {
     try {
       const income = await Income.find({ userid : req.user.id, })
+      const expense = await Expense.find({ user: req.user.id, })
       res.render("dashboard.ejs", {
           income: income,
           userid: req.user,
           category: req.body.category,
+          expense: expense,
+          expenseName: req.body.expenseName,
+          expenseCost: req.body.expenseCost,
+          date: req.body.date, 
+          category: req.body.category,
+          user: req.user
       });
     } catch (err) {
       console.log(err);
