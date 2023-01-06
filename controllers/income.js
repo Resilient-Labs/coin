@@ -27,7 +27,6 @@ module.exports = {
         console.log(err);
       }
   },
-
   editIncome: async (req, res) => {
     console.log(req.body)
     try {
@@ -50,6 +49,4 @@ module.exports = {
       console.log(error)
     }
   }
-
-
 }

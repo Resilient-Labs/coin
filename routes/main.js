@@ -1,4 +1,4 @@
-    const express = require("express")
+const express = require("express")
 const router = express.Router()
 const authController = require("../controllers/auth")
 const homeController = require("../controllers/home")
@@ -20,6 +20,7 @@ router.get("/signup", authController.getSignup)
 router.post("/signup", authController.postSignup)
 router.get("/income", ensureAuth, incomeController.getIncome)
 router.post("/updateIncome", incomeController.updateIncome)
+router.put("/editIncome", incomeController.editIncome)
 router.get("/dashboard", ensureAuth, postsController.getDashboard)
 
 // edit income
