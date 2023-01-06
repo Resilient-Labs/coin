@@ -18,7 +18,8 @@ module.exports = {
         res.render("expense.ejs", {
           expenseName: req.body.expenseName,
           expenseCost: req.body.expenseCost,
-          isReccuring: req.body.value
+          isReccuring: req.body.value, 
+          date: req.body.date
         });
         console.log(req.body.expenseName)
       } catch (err) {
@@ -41,7 +42,8 @@ module.exports = {
         await Expense.create({
           expenseName: req.body.expenseName,
           expenseCost: req.body.expenseCost,
-          isRecurring: req.body.isRecurring
+          isRecurring: req.body.isRecurring, 
+          date: req.body.date
         });
         console.log("Expenses have been added!");
         res.redirect("/expense");
@@ -49,6 +51,8 @@ module.exports = {
         console.log(err);
       }
     },
+    //edit expenses
+
     // put request to update current expense information
     editExpenseData: async (req, res) => {
       console.log("making a PUT expense request")

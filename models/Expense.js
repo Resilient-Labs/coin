@@ -7,17 +7,20 @@ const ExpenseSchema = new mongoose.Schema({
   },
   expenseName: {
     type: String,
-    required: false,
+    required: true,
   },
   expenseCost: {
     type: Number,
-    required: false,
+    required: true,
   },
   isRecurring: {
     type: Boolean,
     default: false
   //   // added isRecurring as a Boolean to account for the recurring expenses to database, is set to default 'false' -Abdullahi Ali
   },
+  date: {
+    type: Date
+  }
 });
 
 module.exports = mongoose.model("Expense", ExpenseSchema);
