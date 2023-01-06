@@ -1,6 +1,6 @@
+// CONTRIBUTION - SARAH B
+// don't forget to note your contributions yall for leon! 
 const Expense = require("../models/Expense");
-
-
 // CRUD
 module.exports = {
   // navigate to expense page, get for expense page

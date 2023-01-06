@@ -1,3 +1,4 @@
+// CONTRIBUTION - SARAH B
 const Income = require("../models/Income");
 
 module.exports = {
@@ -15,6 +16,7 @@ module.exports = {
     }
   },
   updateIncome: async (req, res) => {
+    console.log("controller")
     try {
         await  Income.updateOne( { userid : req.user.id, date : req.body.userIncomeDate  },
         { income : req.body.userIncome, date : req.body.userIncomeDate }, { upsert : true } );
@@ -23,7 +25,7 @@ module.exports = {
       } catch (err) {
         console.log(err);
       }
-  },
+  }
 
 
 }
