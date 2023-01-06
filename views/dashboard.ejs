@@ -48,8 +48,8 @@
                     <% for(let i=0; i < income.length; i++) { %>
                     <td><%= income[i].date %></td>
                     <td class="updateIncome"><%= income[i].income %></td>
-                    <td data-id=<%= userid._id %>><button id="incomeTableEdit">Edit</button></td>
-                    <td><button id="incomeTableDelete">Delete</button></td>
+                    <td data-id=<%= income[i]._id %>><button id="incomeTableEdit">Edit</button></td>
+                    <td data-id=<%= income[i]._id %>><button id="incomeTableDelete">Delete</button></td>
                   </tr>
                   <% } %>
                 </tbody>

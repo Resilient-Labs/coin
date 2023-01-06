@@ -1,28 +1,47 @@
-//event listeners for edit and delete button. Added by Elvin and Suf. Still working on it. Fetch request is not connecting to the backend. Need to work in the routes
-// causing issues 
- let incomeEdit = document.querySelectorAll('#incomeTableEdit')
- Array.from(incomeEdit).forEach(function(element) {
-  element.addEventListener('click', function(element) {
+//event listeners for edit and delete button. Added by Elvin and Suf. Working. We're using the data-set to grab the specific income post
+let incomeEdit = document.querySelectorAll('#incomeTableEdit')
+Array.from(incomeEdit).forEach(function(element) {
+ element.addEventListener('click', function(element) {
 
-    console.log(this.parentNode.dataset.id)
+   let incomeID = this.parentNode.dataset.id
 
-    let incomeEdit = prompt("edit your income")
-    fetch('/editIncome', {
-      method: 'put',
-      headers: {'Content-Type' : 'application/json'},
-      body: JSON.stringify({
-        // _id: id,
-        // updateIncome: updateIncome,
-        incomeEdit: incomeEdit
-      })
-    })
-    .then(function (response) {
-      window.location.reload()
-    })
-    
-  })
+   let incomeEdit = prompt("edit your income")
+   fetch('/editIncome', {
+     method: 'put',
+     headers: {'Content-Type' : 'application/json'},
+     body: JSON.stringify({
+       // _id: id,
+       incomeID: incomeID,
+       incomeEdit: incomeEdit
+     })
+   })
+   .then(function (response) {
+     window.location.reload()
+   })
+   
  })
+})
 
+let incomeDelete = document.querySelectorAll('#incomeTableDelete')
+Array.from(incomeDelete).forEach(function(element) {
+ element.addEventListener('click', function(element) {
+
+   let incomeID = this.parentNode.dataset.id
+
+   fetch('/deleteIncome', {
+     method: 'delete',
+     headers: {'Content-Type' : 'application/json'},
+     body: JSON.stringify({
+       // _id: id,
+       incomeID: incomeID,
+     })
+   })
+   .then(function (response) {
+     window.location.reload()
+   })
+   
+ })
+})
 // Isaiah's Contribution
 //Charts render in profile.ejs
 //connects to MongoDB Charts SDK via link in html/ejs
