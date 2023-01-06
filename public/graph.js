@@ -55,12 +55,34 @@ async function renderChart() {
 
 
   // ------------------JM: INCOME TABLE (edit&delete)----------------------
+<<<<<<< HEAD
 
   //JM ORIGINAL DELETE INCOME FUNCTION
   //UPDATED BY SM
 
 
   function deleteEvent(id) {
+=======
+  function editEvent(_id) {
+    let incomeEdit = document.querySelector('.updateIncome').value
+    fetch('/incomes/edit', {
+      method: 'put',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        '_id': _id,
+        'updateIncome': updateIncome,
+      })
+    })
+      .then(response => {
+        if (response.ok) return response.json()
+      })
+      .then(data => {
+        console.log(data)
+        window.location.href = `/incomes/${_id}`
+      })
+  }
+  function deleteEvent(_id) {
+>>>>>>> 09642d7f4bada485c93c88b096877804f0d40479
     fetch('/incomes/deleteincomes', {
       method: 'delete',
       headers: {
