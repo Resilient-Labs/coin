@@ -2,10 +2,12 @@
 // causing issues 
  let incomeEdit = document.querySelectorAll('#incomeTableEdit')
  Array.from(incomeEdit).forEach(function(element) {
-  element.addEventListener('click', function() {
+  element.addEventListener('click', function(element) {
+
+    console.log(this.parentNode.dataset.id)
 
     let incomeEdit = prompt("edit your income")
-    fetch('/updateIncome', {
+    fetch('/editIncome', {
       method: 'put',
       headers: {'Content-Type' : 'application/json'},
       body: JSON.stringify({
