@@ -62,7 +62,7 @@ async function renderChart() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         '_id': _id,
-        'eventtitle': eventtitle,
+        'updateIncome': updateIncome,
       })
     })
       .then(response => {
