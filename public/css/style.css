@@ -1,63 +1,54 @@
-/* universal */
-
 #link {
     text-decoration: none;
     color: black;
 }
-
 /* partial: header */
 .partialsheadertext {
     font-family: 'Uncial Antiqua', cursive;
     font-size: 75px;
-
 }
-
 .headersubtext {
     font-family: 'Corben', cursive;
     font-weight: 700;
     color: lightgray;
 }
-
 #link:hover {
     color: orange;
 }
-
 /* END partial: header */
-
-
-
 /* login */
 #login {
-    /* background-image: url(./loginsignup.jpg); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #EDFFFD;
 }
-
 #loginsection {
-    width: 30%;
-    color: white;
-    margin-top: 10%;
+    background-color: white;
+    margin:auto;
+    border:1px solid #C7C7C7;
+    padding:20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(101, 100, 100, 0.4);
+    width:30%;
+    /* margin-top: 10%; */
 }
-
 /* end login */
-
 /* signup */
 #signup {
-    /* background-image: url(./loginsignup.jpg); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #EDFFFD;
 }
-
+h3{
+    text-align: center;
+}
 #signupsection {
-    width: 30%;
-    color: white;
-    margin-top: 5%;
+    background-color: white;
+    margin:auto;
+    border:1px solid #C7C7C7;
+    padding:20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(101, 100, 100, 0.4);
+    width:30%;
 }
 
 /* end signup */
-
 /* index */
 /* #index {
     background-image: url(./index.jpg);
@@ -65,12 +56,10 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 .orderform {
     color: white;
     margin-bottom: 3%;
 }
-
 .indexformcontainer {
     display: flex;
     justify-content: center;
@@ -97,32 +86,24 @@
     background-color: rgb(165, 243, 255);
     color: whitesmoke;
 }
-
-
 /* end index */
-
 /* card */
-
 .card {
     width: 70%;
     display: flex;
     flex-direction: column;
     border: 1px solid orange;
 }
-
 .card-header {
     height: 30%;
     background: orange;
     color: white;
     text-align: center;
 }
-
 .order-container {
     padding: 2px 16px;
 }
-
 /* end card */
-
 /* feed */
 #feed {
     /* background-image: url(./index.jpg); */
@@ -142,46 +123,26 @@
 .right {
     width: 48%;
 }
-
 /* end feed */
-
 /* CHART */
-#chart {
+  #chart, .total-amount-area {
     border-top: none;
     flex-grow: 1;
     height: 700px;
     width: 700px;
     margin: 5%;
-    background-color: #21313c;
+    background-color: #ffffff;
   }
-/* changes */
 
-/*  */
-/*  */
+.total-amount-area {
+    padding-top: 7%;
+}
 
-/*  */
-/*  */
-
-/*  */
-/*  */
-
-/*  */
-/*  */
-
-/*  */
-/*  */
-
-/*  */
-/*  */
-
-/*  */
-/*  */
-
-/*  */
-/*  */
-
-/*  */
-/*  */
-
-/*  */
-/*  */
+#total-amount {
+    font-size: 7rem;
+    text-align: center;
+    
+}
+.total-links {
+    text-align: center;
+}
