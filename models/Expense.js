@@ -9,6 +9,10 @@ const ExpenseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  category:{
+    type: String, 
+    required: false, 
+  },
   expenseCost: {
     type: Number,
     required: true,

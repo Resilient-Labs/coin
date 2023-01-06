@@ -15,11 +15,15 @@ module.exports = {
     // get to retrieve expense data 
     getExpenseData: async (req, res) => {
       try {
+        const expense = await Expense.find({ user : req.user.id, })
         res.render("expense.ejs", {
+          expense: expense,
           expenseName: req.body.expenseName,
           expenseCost: req.body.expenseCost,
           isReccuring: req.body.value, 
-          date: req.body.date
+          date: req.body.date, 
+          category: req.body.category,
+          user: req.user,
         });
         console.log(req.body.expenseName)
       } catch (err) {
@@ -43,7 +47,9 @@ module.exports = {
           expenseName: req.body.expenseName,
           expenseCost: req.body.expenseCost,
           isRecurring: req.body.isRecurring, 
-          date: req.body.date
+          date: req.body.date, 
+          category: req.body.category,
+          user: req.user,
         });
         console.log("Expenses have been added!");
         res.redirect("/expense");
