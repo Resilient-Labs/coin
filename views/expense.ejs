@@ -54,6 +54,13 @@
                             <input name="isRecurring" value="false" type="radio" id="notRepeating">
                             <label for="notRepeating">No</label>
                             <input type="date" class="form-control" name="date" />
+                            <select name="category" class="form-control" aria-label="Default select example" placeholder="Choose An Expense Category">
+                              <option value="rent" name="rent">Rent</option>
+                              <option value="utilities" name="utilities">Utilities</option>
+                              <option value="food" name="food">Food</option>
+                              <option value="transportation" name="transportation">Transportation</option>
+                              <option value="miscellaneous" name="miscellaneous">Miscellaneous</option>
+                            </select>
                             <button type="submit" class="btn btn-primary">Add</button>
                             <button type="delete" class="btn btn-primary">Clear</button>
                           </form>
