@@ -25,7 +25,19 @@ module.exports = {
       } catch (err) {
         console.log(err);
       }
-  }
+  },
+  editIncome:
+  async (req, res) => {
+    console.log("controller")
+    try {
+        await  Income.updateOne( { userid : req.user.id, date : req.body.userIncomeDate  },
+        { income : req.body.userIncome, date : req.body.userIncomeDate }, { upsert : true } );
+        console.log("Income has been added!");
+        res.redirect("/income");
+      } catch (err) {
+        console.log(err);
+      }
+  },
 
 
 }
