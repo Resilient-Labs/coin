@@ -25,7 +25,8 @@ router.get("/dashboard", ensureAuth, postsController.getDashboard)
 
 // edit income
 router.put("/editIncome", incomeController.editIncome)
-
+// Delete income
+router.delete("/deleteIncome", incomeController.deleteIncome)
 
 
 module.exports = router;

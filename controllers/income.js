@@ -42,9 +42,23 @@ module.exports = {
   editIncome: async (req, res) => {
     console.log(req.body)
     try {
+      await Income.findByIdAndUpdate({ _id: req.body.incomeID }, 
+        {
+          income: req.body.incomeEdit
+        })
+        res.redirect("dashboard.ejs");
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  deleteIncome: async (req, res) => {
+    console.log(req.body)
+    try {
+      await Income.findByIdAndDelete({ _id:  req.body.incomeID})
+      res.redirect("dashboard.ejs");
       
     } catch (error) {
-      
+      console.log(error)
     }
   }
 }
