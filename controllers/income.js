@@ -7,7 +7,7 @@ module.exports = {
       const income = await Income.find({ userid : req.user.id, })
       res.render("income.ejs", {
         income: income,
-        user: req.user,
+        userid: req.user,
       
       });
     } catch (err) {

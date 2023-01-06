@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const IncomeSchema = new mongoose.Schema({
-
   income: {
     type: String,
     required: true,
@@ -14,7 +13,6 @@ const IncomeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
- 
 });
 
-module.exports = mongoose.model("income", IncomeSchema); 
+module.exports = mongoose.model("Income", IncomeSchema); 
