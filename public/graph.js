@@ -1,3 +1,16 @@
+//event listeners for edit and delete button 
+// causing issues 
+//  let incomeEdit = document.querySelector('#incomeTableEdit')
+//  console.log(incomeEdit)
+
+//  incomeEdit.forEach(function(element) {
+//   console.log(element)
+//   // element.addEventListener('click', function() {
+//   //   console.log("hello")
+//   // })
+//  })
+
+
 //Charts render in profile.ejs
 //connects to MongoDB Charts SDK via link in html/ejs
 const ChartsEmbedSDK = window.ChartsEmbedSDK;
@@ -34,8 +47,23 @@ async function renderChart() {
   // ------------------JM: INCOME TABLE (edit&delete)----------------------
   //JM ORIGINAL DELETE INCOME FUNCTION
   //UPDATED BY SM
-  function deleteEvent(id) {
-    fetch('/incomes/deleteincomes', {
+  function deletedIncome(id) {
+    fetch('/incomes', {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        _id: id,
+      })
+    }).then(function (response) {
+      window.location.reload()
+      // window.location.href = '/incomes'
+    })
+  }
+
+  function deletedExpenses(id) {
+    fetch('/expenses', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json'
@@ -65,16 +93,39 @@ async function renderChart() {
 // }
 //===JM ORIGINAL INCOME EDIT FUNCTION
 //===edited by SM
-function edit(id) {
+function editIncome(id) {
+ 
   // let incomeEdit = document.querySelector('.updateIncome').value
-  let incomeEdit = prompt("edit your amount")
-  fetch('/incomes/edit', {
+  console.log("hello")
+  
+  let incomeEdit = prompt("edit your income")
+  fetch('/incomes', {
     method: 'put',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       _id: id,
       updateIncome: updateIncome,
       incomeEdit: incomeEdit
+    })
+  })
+  .then(function (response) {
+    window.location.reload()
+  })
+}
+
+//edit for expenses
+//error edit has already been declared
+function editExpenses(id) {
+  // let incomeEdit = document.querySelector('.updateIncome').value
+  
+  let expenseEdit = prompt("edit your expense")
+  fetch('/expenses', {
+    method: 'put',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      _id: id,
+      updateExpense: updateExpense,
+      expenseEdit: expenseEdit
     })
   })
   .then(function (response) {
