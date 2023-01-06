@@ -4,6 +4,7 @@ const expensesController = require("../controllers/expenses")
 const { ensureAuth, ensureGuest } = require("../middleware/auth")
 
 //Expenses Routes - simplified for now
+// CONTRIBUTION - SARAH B
 
 router.get("/:id", ensureAuth, expensesController.getExpenseData);
 router.post("/createExpenses", expensesController.createExpenses);

@@ -1,16 +1,27 @@
-//event listeners for edit and delete button 
+//event listeners for edit and delete button. Added by Elvin and Suf. Still working on it. Fetch request is not connecting to the backend. Need to work in the routes
 // causing issues 
-//  let incomeEdit = document.querySelector('#incomeTableEdit')
-//  console.log(incomeEdit)
+ let incomeEdit = document.querySelectorAll('#incomeTableEdit')
+ Array.from(incomeEdit).forEach(function(element) {
+  element.addEventListener('click', function() {
 
-//  incomeEdit.forEach(function(element) {
-//   console.log(element)
-//   // element.addEventListener('click', function() {
-//   //   console.log("hello")
-//   // })
-//  })
+    let incomeEdit = prompt("edit your income")
+    fetch('/updateIncome', {
+      method: 'put',
+      headers: {'Content-Type' : 'application/json'},
+      body: JSON.stringify({
+        // _id: id,
+        // updateIncome: updateIncome,
+        incomeEdit: incomeEdit
+      })
+    })
+    .then(function (response) {
+      window.location.reload()
+    })
+    
+  })
+ })
 
-
+// Isaiah's Contribution
 //Charts render in profile.ejs
 //connects to MongoDB Charts SDK via link in html/ejs
 const ChartsEmbedSDK = window.ChartsEmbedSDK;
@@ -29,6 +40,8 @@ async function renderChart() {
     // // render the chart into divs(s)
     chart
       .render(document.getElementById('chart'))
+
+    
     //refreshes page
     // window.onload=function(){
     //   document.getElementById('refresh').addEventListener('click', () => chart.refresh());
@@ -42,6 +55,10 @@ async function renderChart() {
     //   console.log(monthSelect)
     //   monthSelect ? chart.setFilter({ month : {'$oid': monthSelect} }) : chart.setFilter({});
     // });
+
+    // End of Isaiah's Contribution
+
+
   }
   renderChart().catch((e) => window.alert(e.message));
   // ------------------JM: INCOME TABLE (edit&delete)----------------------

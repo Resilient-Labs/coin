@@ -1,6 +1,9 @@
+// CONTRIBUTION - SARAH B
 const Income = require("../models/Income");
 const Post = require("../models/Post");
 const Expense = require("../models/Expense");
+const User = require("../models/User");
+
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -23,6 +26,9 @@ module.exports = {
   }, 
   getDashboard: async (req, res) => {
     try {
+      //find all the user in the array that has the matching id of this request,
+      const user = await User.find()
+
       const income = await Income.find({ userid : req.user.id, })
       const expense = await Expense.find({ user: req.user.id, })
       res.render("dashboard.ejs", {

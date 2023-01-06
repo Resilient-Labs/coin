@@ -61,6 +61,7 @@ app.use("/post", postRoutes);
 app.use("/expenses", expenseRoutes);
 
 
+
 //Server Running
 app.listen(process.env.PORT, () => {
   console.log("Server is running on port 3000, you better catch it!");
