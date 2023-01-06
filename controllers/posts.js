@@ -1,5 +1,6 @@
-
+const Income = require("../models/Income");
 const Post = require("../models/Post");
+const Expense = require("../models/Expense");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -22,9 +23,11 @@ module.exports = {
   }, 
   getDashboard: async (req, res) => {
     try {
-
+      const income = await Income.find({ userid : req.user.id, })
       res.render("dashboard.ejs", {
-      
+          income: income,
+          userid: req.user,
+          category: req.body.category,
       });
     } catch (err) {
       console.log(err);

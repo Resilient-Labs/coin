@@ -55,34 +55,148 @@ async function renderChart() {
 
 
   // ------------------JM: INCOME TABLE (edit&delete)----------------------
-  function editEvent(_id) {
-    let incomeEdit = document.querySelector('.updateIncome').value
-    fetch('/incomes/edit', {
-      method: 'put',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        '_id': _id,
-        'eventtitle': eventtitle,
-      })
-    })
-      .then(response => {
-        if (response.ok) return response.json()
-      })
-      .then(data => {
-        console.log(data)
-        window.location.href = `/incomes/${_id}`
-      })
-  }
-  function deleteEvent(_id) {
+
+  //JM ORIGINAL DELETE INCOME FUNCTION
+  //UPDATED BY SM
+
+
+  function deleteEvent(id) {
     fetch('/incomes/deleteincomes', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        '_id': _id
+        _id: id,
+
       })
     }).then(function (response) {
-      window.location.href = '/gallery'
+      window.location.reload()
+      // window.location.href = '/incomes'
     })
   }
+
+
+//  SM: delete function taken from old code
+
+// function deleted(id){
+//   fetch('/spells', {
+//     method: 'delete',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       _id: id,
+    
+//     })
+//   }).then(function (response) {
+//     window.location.reload()
+//   })
+
+// }
+
+
+
+//===JM ORIGINAL INCOME EDIT FUNCTION
+//===edited by SM
+
+
+function edit(id) {
+  // let incomeEdit = document.querySelector('.updateIncome').value
+  let incomeEdit = prompt("edit your amount")
+
+  fetch('/incomes/edit', {
+    method: 'put',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      _id: id,
+      updateIncome: updateIncome,
+      incomeEdit: incomeEdit
+    })
+  })
+  .then(function (response) {
+    window.location.reload()
+  })
+
+}
+//     .then(response => {
+//       if (response.ok) return response.json()
+//     })
+//     .then(data => {
+//       console.log(data)
+//       window.location.href = `/incomes/${_id}`
+//     })
+// }
+
+
+
+
+
+
+
+
+//====SM: edit function taken from old code
+
+// function edit(id){
+//   let spellName = prompt("what is the new name of your spell?")
+//   let ritual = prompt("what is your new ritual?")
+ 
+//   fetch('/spells', {
+//     method: 'put',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       _id: id,
+//       spellName: spellName,
+//       ritual: ritual
+    
+//     })
+//   })
+//   .then(function (response) {
+//     window.location.reload()
+//   })
+
+
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+  //this is going to target the button to delete the herb
+  //==============SM CODE FROM DEMO DAY UNDER CONSTRUCTION
+
+// document.querySelectorAll(".deleteBtn").forEach(button => {
+
+//   button.addEventListener("click", function() {
+//       console.log("send delete")
+//           const herbid = this.id
+        
+//           fetch('/deleteHerbs', {
+          
+//               method: 'delete',
+//               headers: { 'Content-Type': 'application/json' },
+//               body: JSON.stringify({
+      
+//               herbid
+//               })
+//           })
+//               .then(response => {
+//                   if (response.ok) return response.body
+//               })
+//               .then(data => {
+                 
+                  
+//                   window.location.reload(true)
+//               })
+//       });
+              
+// })
