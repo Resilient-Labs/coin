@@ -20,8 +20,14 @@ router.get("/signup", authController.getSignup)
 router.post("/signup", authController.postSignup)
 router.get("/income", ensureAuth, incomeController.getIncome)
 router.post("/updateIncome", incomeController.updateIncome)
+<<<<<<< HEAD
 router.put("/editIncome", incomeController.editIncome)
+=======
+>>>>>>> 33d739e9778c8ffa8275db26c976b34cf620a9fa
 router.get("/dashboard", ensureAuth, postsController.getDashboard)
+
+// edit income
+router.put("/editIncome", incomeController.editIncome)
 
 
 

@@ -9,6 +9,7 @@ module.exports = {
       res.render("income.ejs", {
         income: income,
         userid: req.user,
+        
       
       });
     } catch (err) {
@@ -16,7 +17,7 @@ module.exports = {
     }
   },
   updateIncome: async (req, res) => {
-    console.log("controller")
+    console.log("controller for updateIncome")
     try {
         await  Income.updateOne( { userid : req.user.id, date : req.body.userIncomeDate  },
         { income : req.body.userIncome, date : req.body.userIncomeDate }, { upsert : true } );
@@ -38,6 +39,12 @@ module.exports = {
         console.log(err);
       }
   },
-
-
+  editIncome: async (req, res) => {
+    console.log(req.body)
+    try {
+      
+    } catch (error) {
+      
+    }
+  }
 }
