@@ -6,11 +6,27 @@
 
     <body>
       <main>
-        <!-- Isaiah's Contributions -->
+         <!-- Isaiah's Contributions -->
         <!----------------SM: BOOTSTRAP CREATED TEMPLATE ------------------------>
         <div class="container-fluid">
           <div class="row top-area">
             <div class="col-md-6">
+              <div id="nav">
+                <label
+                  ><span>REFRESH CHART </span>
+                  <button id="refresh">⟳</button>
+                </label>
+             
+                <label class="text-white"
+                  ><span>Filter By User </span>
+                  <select name="user-filter" id="user-filter" class="text-white d-none" > 
+                    <option value="<%= user.id %>"><%= user.userName %></option>"></option>
+
+                  </select>
+                  
+                </label>
+        
+              </div>
               <!----------------SM, SB: !!PLEASE REPLACE WITH PIE CHART!! ------------------------>
               <div id="pie-chart-area">
                 <div id="chart"></div>
@@ -22,7 +38,11 @@
 
               <!----------------SM: add new expense and add new income buttons ------------------------>
               <div>
-                <h3 id="total-amount">$4500.00</h3>
+                <% let total = 0 %>
+                <% for (let i in expense) { %>
+                  <% total += expense[i].expenseCost %>
+                <% } %>
+                <h3 id="total-amount"><%= total %></h3>
               </div>
               <div class="total-links">
                 <a href="/expense" class="btn btn-primary">Expense</a>
@@ -76,25 +96,12 @@
                     <% for(let i=0; i < expense.length; i++) { %>
                     <td><%= expense[i].date %></td>
                     <td><%= expense[i].expenseName %></td>
-                    <td><%= expense[i].expenseCost %></td>
+                    <td class="updateExpenseCost"><%= expense[i].expenseCost %></td>
                     <td><%= expense[i].category %></td>
                     <!--SM EDIT AND DELETE BUTTONS-->
-                    <td>
-                      <button class="editExpense" onclick="edit('<%= expense[i]._id %>')">
-                        Edit
-                      </button>
-                    </td>
-
-                    <td>
-                      <button
-                        class=""
-                        onclick="deleted('<%= expense[i]._id %>')"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                    <!-- <td><button id="incomeTableEdit">Edit</button></td>
-                      <td><button id="incomeTableDelete">Delete</button></td> -->
+                    <td data-id=<%= expense[i]._id %>><button id="expenseTableEdit">Edit</button></td>
+                    <td data-id=<%= expense[i]._id %>><button id="expenseTableDelete">Delete</button></td>
+                 
                   </tr>
                   <% } %>
                 </tbody>
