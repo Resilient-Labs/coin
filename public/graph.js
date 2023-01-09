@@ -42,6 +42,50 @@ Array.from(incomeDelete).forEach(function(element) {
    
  })
 })
+
+let expenseEdit = document.querySelectorAll('#expenseTableEdit')
+Array.from(expenseEdit).forEach(function(element) {
+ element.addEventListener('click', function(element) {
+
+   let expenseID = this.parentNode.dataset.id
+
+   let expenseEdit = prompt("edit your expense")
+   fetch('/editExpense', {
+     method: 'put',
+     headers: {'Content-Type' : 'application/json'},
+     body: JSON.stringify({
+       // _id: id,
+       expenseID: expenseID,
+       expenseEdit: expenseEdit
+     })
+   })
+   .then(function (response) {
+     window.location.reload()
+   })
+   
+ })
+})
+
+let expenseDelete = document.querySelectorAll('#expenseTableDelete')
+Array.from(expenseDelete).forEach(function(element) {
+ element.addEventListener('click', function(element) {
+
+   let expenseID = this.parentNode.dataset.id
+
+   fetch('/deleteExpense', {
+     method: 'delete',
+     headers: {'Content-Type' : 'application/json'},
+     body: JSON.stringify({
+       // _id: id,
+       expenseID: expenseID,
+     })
+   })
+   .then(function (response) {
+     window.location.reload()
+   })
+   
+ })
+})
 // Isaiah's Contribution
 //Charts render in profile.ejs
 //connects to MongoDB Charts SDK via link in html/ejs
@@ -64,18 +108,27 @@ async function renderChart() {
 
     
     //refreshes page
-    // window.onload=function(){
-    //   document.getElementById('refresh').addEventListener('click', () => chart.refresh());
-    // }
-    //   let element = document.querySelector(".body-content")
+    window.onload=function(){
+      document.getElementById('refresh').addEventListener('click', () => chart.refresh());
+    }
+      let element = document.querySelector(".body-content")
     //filtering
     //(based on future month collections...)
-    // const monthSelect = document.getElementById("month-filter")
-    // monthSelect.addEventListener("change", async (e) => {
-    //   const monthSelect = e.target.value;
-    //   console.log(monthSelect)
-    //   monthSelect ? chart.setFilter({ month : {'$oid': monthSelect} }) : chart.setFilter({});
-    // });
+    const userSelect = document.getElementById("user-filter")
+    // automates click of select 
+    // renders user information only
+    window.addEventListener("load",function(){
+      setTimeout(()=> {
+        document.getElementById("user-filter").click();
+      }
+      ,1000);
+    },true);
+    
+    userSelect.addEventListener("click", async (e) => {
+      const userSelect = e.target.value;
+      console.log("success")
+      userSelect ? chart.setFilter({ user : {'$oid': userSelect} }) : chart.setFilter({});
+    });
 
     // End of Isaiah's Contribution
 

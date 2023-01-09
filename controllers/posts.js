@@ -29,7 +29,7 @@ module.exports = {
       //find all the user in the array that has the matching id of this request,
       const user = await User.find()
       const income = await Income.find({ userid : req.user.id, })
-      const expense = await Expense.find({ user })
+      const expense = await Expense.find({ user: req.user.id, })
       res.render("dashboard.ejs", {
           income: income,
           userid: req.user,
